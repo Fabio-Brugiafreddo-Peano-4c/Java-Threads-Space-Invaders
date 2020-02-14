@@ -5,10 +5,22 @@
  */
 package game;
 
+import java.awt.Canvas;
+import java.awt.Color;
+
 /**
  *
  * @author brugiafreddo.fabio
  */
-public class Space {
+
+    class Space extends Canvas {
+
+    Space() {
+       System.out.println("Setting canvas background and dimentions ");
+
+       setBackground (Color.BLACK);
+       setSize(800, 600);
+    }
     
 }
+
