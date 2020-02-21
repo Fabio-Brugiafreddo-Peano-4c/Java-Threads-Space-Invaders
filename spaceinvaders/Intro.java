@@ -12,7 +12,7 @@ import java.awt.Graphics;
 import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferStrategy;
-
+import java.io.BufferedInputStream;
 /**
  *
  * @author brugiafreddo.fabio
@@ -45,13 +45,14 @@ public class Intro extends Space {
         Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
         //cancelliamo l'immagine precedente coprendola con un rettangolo bianco
         Image img;
-        
+         g.setColor(Color.black);
+        g.fillRect(0,0,800,600);
         //cielo
         g.setColor(Color.white);
       
       
 
-        // scrivi nel buffer la scritta in Rosso 
+        
         g.setColor(Color.red);
         g.setFont(new Font("Bold", Font.ITALIC, 40 + i));
         g.drawString("Space Invaders", 250 + i, 250 + i);
