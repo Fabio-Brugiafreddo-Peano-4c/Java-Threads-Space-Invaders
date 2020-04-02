@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game;
+package spaceinvaders;
 
 import static com.sun.webkit.graphics.WCImage.getImage;
 import java.awt.Color;
@@ -13,6 +13,7 @@ import java.awt.Graphics2D;
 import java.awt.Image;
 import java.awt.image.BufferStrategy;
 import java.io.BufferedInputStream;
+import javax.swing.ImageIcon;
 /**
  *
  * @author brugiafreddo.fabio
@@ -21,7 +22,7 @@ public class Intro extends Space {
 
     private int i = 0;
     private BufferStrategy strategy;
-
+final Image image = new ImageIcon("src/spaceinvaders/na.jpg").getImage();
     void run() throws InterruptedException {
         createBufferStrategy(2);
         strategy = getBufferStrategy();
@@ -44,15 +45,14 @@ public class Intro extends Space {
     public void paint() {
         Graphics2D g = (Graphics2D) strategy.getDrawGraphics();
         //cancelliamo l'immagine precedente coprendola con un rettangolo bianco
-        Image img;
-         g.setColor(Color.black);
-        g.fillRect(0,0,800,600);
+        g.drawImage(image, 0, 0, getWidth(), getHeight(), null);
+        
         //cielo
         g.setColor(Color.white);
       
       
 
-        
+       
         g.setColor(Color.red);
         g.setFont(new Font("Bold", Font.ITALIC, 40 + i));
         g.drawString("Space Invaders", 250 + i, 250 + i);

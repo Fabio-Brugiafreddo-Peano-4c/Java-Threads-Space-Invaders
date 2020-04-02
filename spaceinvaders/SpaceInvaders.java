@@ -3,9 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package game;
+package spaceinvaders;
 
+import java.awt.GridLayout;
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 import javax.swing.WindowConstants;
 
 /**
@@ -17,9 +21,12 @@ public class SpaceInvaders extends JFrame {
     public SpaceInvaders() throws InterruptedException {
         this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE); 
         this.setResizable(false);
-        setIgnoreRepaint(true);
+        
+        
         Intro intro = new Intro();
+       
         this.add(intro);
+       
         // impacchetto il tutto e rendi visibile
         this.pack();
         this.setVisible(true);
